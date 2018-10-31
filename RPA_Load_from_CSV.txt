@@ -1,0 +1,100 @@
+
+Input to add : csvFilePath (text)
+
+Output to add : listLineItems (collection)
+
+
+var rawFileData = File.ReadAllText(csvFilePath);
+listLineItems = new DataTable();
+var customerName = "";
+
+if (!string.IsNullOrWhiteSpace(rawFileData))
+{
+	var fileDataArray = new List<string>(rawFileData.Split('"'));
+
+	fileDataArray.RemoveAll(data => string.IsNullOrWhiteSpace(data) || data.Equals(","));
+
+	var dateArray =  new List<string>();
+	var invoiceNoArray = new List<string>();
+	var amountArray = new List<string>();
+	
+	for (int i = 0; i < fileDataArray.Count; i++)
+	{
+		switch (fileDataArray[i])
+			{
+				case "CustomerName":
+					customerName = fileDataArray[i + 1];
+					//if (!string.IsNullOrWhiteSpace(customerName))
+						//invoice.CustomerName = customerName;
+					i++;
+					break;
+				case "RemittanceDate":
+					var remittanceDate = fileDataArray[i + 1];
+				   //if (!string.IsNullOrWhiteSpace(remittanceDate))
+						//invoice.RemittanceDate = remittanceDate;
+					i++;
+					break;
+				case "Date":
+					var dateValue = fileDataArray[i + 1];
+					if(!string.IsNullOrWhiteSpace(dateValue))
+						if (dateValue.Contains(";"))
+							dateArray = new List<string>(dateValue.Split(';'));
+						else
+							dateArray.Add(dateValue);
+					i++;
+					break;
+				case "InvoiceNumber":
+					var invoiceNumberValue = fileDataArray[i + 1];
+					if (!string.IsNullOrWhiteSpace(invoiceNumberValue))
+						if (invoiceNumberValue.Contains(";"))
+							invoiceNoArray = new List<string>(invoiceNumberValue.Split(';'));
+						else
+							invoiceNoArray.Add(invoiceNumberValue);
+					break;
+				case "Amount":
+					var amountValue = fileDataArray[i + 1];
+					if (!string.IsNullOrWhiteSpace(amountValue))
+						if (amountValue.Contains(";"))
+							amountArray = new List<string>(amountValue.Split(';'));
+						else
+							amountArray.Add(amountValue);
+					i++;
+					break;
+			}
+
+	}
+DataColumn col1 = new DataColumn();
+col1.DataType = System.Type.GetType("System.String");
+col1.ColumnName = "Client";
+listLineItems.Columns.Add(col1);
+
+DataColumn col2 = new DataColumn();
+col2.DataType = System.Type.GetType("System.String");
+col2.ColumnName = "Invoice_no";
+listLineItems.Columns.Add(col2);
+    
+DataColumn col3 = new DataColumn();
+col3.DataType = System.Type.GetType("System.String");
+col3.ColumnName = "ReceiptDate";
+listLineItems.Columns.Add(col3);
+    
+DataColumn col4 = new DataColumn();
+col4.DataType = System.Type.GetType("System.Double");
+//col4.DataType = typeof(Double);
+col4.ColumnName = "Invoice_amt";
+listLineItems.Columns.Add(col4);
+
+
+	for(int i = 0;i<dateArray.Count;i++)
+	{
+		DataRow row = listLineItems.NewRow();
+		row["Client"] = customerName;
+		row["Invoice_no"] = invoiceNoArray.ElementAt(i);
+		row["ReceiptDate"] = dateArray.ElementAt(i);
+		var invoiceAmount = System.Text.RegularExpressions.Regex.Replace(amountArray.ElementAt(i), @"\s+", "");
+		row["Invoice_amt"] = Convert.ToDouble(invoiceAmount);
+		listLineItems.Rows.Add(row);
+
+			
+	}
+}

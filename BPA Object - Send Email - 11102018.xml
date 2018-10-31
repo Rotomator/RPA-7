@@ -1,0 +1,598 @@
+﻿<process name="Send Email" version="1.0" bpversion="6.2.1.4272" narrative="" byrefcollection="true" type="object" runmode="Exclusive" preferredid="2ac49b14-9dd8-43bc-ab60-6ce0df732fb3">
+  <appdef>
+    <element name="Application Root">
+      <id>189ef803-a0cf-4b52-b510-84870f422e7d</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>63</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="844afce7-b8f5-4010-b168-9acdb2b3973d" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="18766abf-1222-42ad-abf9-6821b471c479" type="Normal" published="True">
+    <name>Send Report Email</name>
+    <view>
+      <camerax>34</camerax>
+      <cameray>-65</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="9ee8fbde-b9e3-49f5-a18d-02284a2b6cb0" name="Start" type="Start">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>2c61ebd7-73ae-44dd-b6a9-43b0e1b43f3b</onsuccess>
+  </stage>
+  <stage stageid="2c61ebd7-73ae-44dd-b6a9-43b0e1b43f3b" name="End" type="End">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="4659310b-583c-4476-b152-b2453ae0d32b" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>C:\Program Files\Blue Prism Limited\Blue Prism Automate\BluePrism.Utilities.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>BluePrism.Utilities</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="b1236ffb-a468-4648-b888-2c957a5c2c2b" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>844afce7-b8f5-4010-b168-9acdb2b3973d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="7b924a17-0468-4e88-9d32-82f2edda40bc" name="Start" type="Start">
+    <subsheetid>844afce7-b8f5-4010-b168-9acdb2b3973d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>b8cd4092-39a2-4443-9cea-7d1db8b15724</onsuccess>
+  </stage>
+  <stage stageid="b8cd4092-39a2-4443-9cea-7d1db8b15724" name="End" type="End">
+    <subsheetid>844afce7-b8f5-4010-b168-9acdb2b3973d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="1df359f8-74a2-41eb-a22f-b3464067165f" name="Send Report Email" type="SubSheetInfo">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="9d125ac0-b621-4df6-bc0c-6712a12e4a23" name="Start" type="Start">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="CC_MailID" stage="CC_MailID" />
+      <input type="text" name="TO_MailID" stage="TO_MailID" />
+      <input type="text" name="inClientName" stage="inClientName" />
+      <input type="time" name="startTime" stage="processStartTime" />
+      <input type="time" name="endTime" stage="processEndTime" />
+      <input type="timespan" name="executionTime" stage="totalExecutionTime" />
+      <input type="number" name="totalCount" stage="totalCount" />
+      <input type="number" name="processedCount" stage="processedCount" />
+      <input type="number" name="unProcessedCount" stage="unProcessedCount" />
+      <input type="text" name="logFilePath" stage="logFilePath" />
+      <input type="text" name="screenShotPath" stage="screenShotPath" />
+    </inputs>
+    <onsuccess>ca56b882-e5c5-4a1f-8873-4668c90163d9</onsuccess>
+  </stage>
+  <stage stageid="b2d45ad1-0def-46c7-8e9d-daa5d2211310" name="End" type="End">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="1c71abd8-0c48-4a56-9a73-1f412ff708cf" name="Note1" type="Note">
+    <subsheetid>844afce7-b8f5-4010-b168-9acdb2b3973d</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="e62c8147-12c8-434f-95c7-96fa8ac1d63d" name="Note2" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="c194fd9f-8adb-417d-87d5-861925a62c70" name="Send Detailed Report" type="Code">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="CC_MailID" expr="[CC_MailID]" />
+      <input type="text" name="InputFileName" expr="[folderPath]&amp;&quot;\&quot;&amp;[inClientName]&amp;&quot;.xlsx&quot;" />
+      <input type="text" name="Mail_Subject" expr="&quot;Payment Reconciliation Report &quot;&amp;FormatDateTime(Today(), &quot;dd MMM yyyy&quot;)&amp;&quot; - &quot;&amp;[inClientName]&amp;&quot; - &quot;&amp;[successMessage]" />
+      <input type="date" name="dateSub" expr="FormatDateTime(Today(), &quot;dd MMM yyyy&quot;)" />
+      <input type="text" name="Mail_Body" expr="[emailBody]" />
+      <input type="text" name="To_MailID" expr="[TO_MailID]" />
+      <input type="text" name="Message" expr="&quot;RA Processing Report&quot;" />
+      <input type="time" name="startTime" expr="[processStartTime]" />
+      <input type="time" name="endTime" expr="[processEndTime]" />
+      <input type="timespan" name="executionTime" expr="[totalExecutionTime]" />
+      <input type="text" name="clientName" expr="[inClientName]" />
+      <input type="number" name="processedCount" expr="[processedCount]" />
+      <input type="number" name="totalCount" expr="[totalCount]" />
+      <input type="number" name="unProcessedCount" expr="[unProcessedCount]" />
+      <input type="text" name="machineName" expr="[machineName]" />
+      <input type="text" name="screeshotPath" expr="[screenShotPath]" />
+      <input type="text" name="logFilePath" expr="[logFilePath]" />
+    </inputs>
+    <onsuccess>b2d45ad1-0def-46c7-8e9d-daa5d2211310</onsuccess>
+    <code><![CDATA[
+    Dim OutApp As Object
+    Dim OutMail As Object
+    Dim SoFile As String
+
+
+    OutApp = Microsoft.VisualBasic.CreateObject("Outlook.Application")
+    OutMail = OutApp.CreateItem(0)
+
+   
+   SoFile = InputFileName
+   Mail_Body = Mail_Body.Replace("{Start Time}",startTime.ToString("hh:mm:ss")) 	
+   Mail_Body = Mail_Body.Replace("{Completion Time}",endTime.ToString("hh:mm:ss"))
+   Mail_Body = Mail_Body.Replace("{Execution Time}",executionTime.ToString()) 
+   Mail_Body = Mail_Body.Replace("{clientName}",clientName)
+   Mail_Body = Mail_Body.Replace("{Total Invoices}",totalCount)
+   Mail_Body = Mail_Body.Replace("{Processed}",processedCount)
+   Mail_Body = Mail_Body.Replace("{unprocessed}",unProcessedCount)
+   Mail_Body = Mail_Body.Replace("{machineName}",machineName)
+   Mail_Body = Mail_Body.Replace("{logFilePath}",logFilePath)
+   Mail_Body = Mail_Body.Replace("{screeshotPath}",screeshotPath)
+   Mail_Body = Mail_Body.Replace("{date}",dateSub)
+   
+
+    With OutMail
+        .To = To_MailID
+        .CC = CC_MailID
+        .Subject = Mail_Subject
+        .HtmlBody = Mail_Body 
+		Try
+		.Attachments.Add(SoFile)			'Input File						
+		catch ex as Exception
+		Message = ex.Message
+		End Try
+        .Display   'or use .Display
+		.send
+    End With
+
+     OutMail = Nothing
+     OutApp = Nothing
+]]></code>
+  </stage>
+  <stage stageid="763effa2-0538-4cce-b2bc-3935f4a0088e" name="CC_MailID" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="08bed998-7dcf-4024-8507-212e5e7bf99b" name="TO_MailID" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>285</displayx>
+    <displayy>-210</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d3367ffb-4cde-44d5-820e-d7cbd6018ce2" name="folderPath" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>270</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d39a5b8b-686d-49a2-b964-fc2b009416bb" name="inClientName" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>-210</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="536f9586-764c-4360-a0a8-e39a6b2b251f" name="Block1" type="Block">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>135</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>225</displaywidth>
+    <displayheight>330</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="ca91cc9b-8c35-4a25-b8a2-68f50df5970d" name="emailBody" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;Hi Narmadha&lt;/p&gt;
+&lt;p&gt;Here is the status report for Payment Reconciliation for &lt;b&gt;{clientName} &lt;/b&gt; executed on  {date} &lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Execution Summary&lt;/b&gt;&lt;/p&gt;
+&lt;table style="width:50%"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Start Time&lt;/th&gt;
+    &lt;th&gt;Completion Time&lt;/th&gt; 
+    &lt;th&gt;Execution Time&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;{Start Time}&lt;/td&gt;
+    &lt;td align="center"&gt;{Completion Time}&lt;/td&gt;
+    &lt;td align="center"&gt;{Execution Time}&lt;/td&gt;
+  &lt;/tr&gt;
+    
+&lt;/table&gt;
+&lt;p&gt;&lt;b&gt;Execution Status&lt;/b&gt;&lt;/p&gt;
+&lt;table style="width:50%"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Total Receipts&lt;/th&gt;
+    &lt;th&gt;&lt;font color="green"&gt;Success&lt;/font&gt;&lt;/th&gt; 
+    &lt;th&gt;&lt;font color="red"&gt;Fail&lt;/font&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center" &gt;{Total Invoices}&lt;/td&gt;
+    &lt;td align="center" bgcolor="#00FF00" &lt;font color="white"&gt;&lt;b&gt;{Processed}&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+    &lt;td align="center" bgcolor="#FF0000"&lt;font color="white"&gt;&lt;b&gt;{unprocessed}&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For details, please refer to the attached report.&lt;/p&gt;
+
+&lt;p&gt;For additional information, please refer to the below log files.&lt;/p&gt;
+
+&lt;p&gt;Machine Name:{machineName}&lt;/p&gt;
+&lt;p&gt;Log File : {logFilePath}&lt;/p&gt;
+&lt;p&gt;Screen Shots : {screeshotPath}&lt;/p&gt;
+
+&lt;p&gt;Regards,&lt;/p&gt;
+&lt;p&gt;Sahaya&lt;/p&gt;
+
+&lt;p&gt;Reconciliation Robot&lt;/p&gt;
+&lt;p&gt;Electrolux Digital Workforce&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8376b455-c564-4d76-b205-892f40ed36e6" name="processStartTime" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>285</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>time</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1c8f1686-da03-41f9-bd95-ba8c18269e3f" name="processEndTime" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>time</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fe3f1c90-2019-4dea-af38-6ad75bac7546" name="totalExecutionTime" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>300</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>timespan</datatype>
+    <initialvalue>0.00:00:00</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d721980c-476a-416b-ae00-821ca62742c7" name="totalCount" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>300</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6131a462-aca4-4bf3-8c3a-943542dc31d8" name="processedCount" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>0</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="be75c6a8-397f-4252-8466-cc1eb4c44e7c" name="unProcessedCount" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ca56b882-e5c5-4a1f-8873-4668c90163d9" name="Get Machine Name" type="Action">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="text" name="Machine Name" narrative="The hostname of the machine running this action" stage="machineName" />
+    </outputs>
+    <onsuccess>6cd2743d-a994-45d0-877e-e4ae667519af</onsuccess>
+    <resource object="Utility - Environment" action="Get Machine Name" />
+  </stage>
+  <stage stageid="182defe7-0ce2-4203-958e-cea87dd20206" name="machineName" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>0</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6d74f04a-c9e8-4d2d-b382-f3bb58a58350" name="logFilePath" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7b9c55a1-9a72-403e-8766-b5c0402afcf1" name="screenShotPath" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e8f89c8b-5905-4df6-9da8-1ed2de127535" name="successMessage" type="Data">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>240</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">Success</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6cd2743d-a994-45d0-877e-e4ae667519af" name="Failed cases?" type="Decision">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[unProcessedCount] &gt; 0" />
+    <ontrue>dfee3676-1c8e-4d27-a294-9f67395e1905</ontrue>
+    <onfalse>acd93c06-68dd-4112-b277-b5d0f73bf773</onfalse>
+  </stage>
+  <stage stageid="dfee3676-1c8e-4d27-a294-9f67395e1905" name="Need Attention" type="Calculation">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-60</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>c194fd9f-8adb-417d-87d5-861925a62c70</onsuccess>
+    <calculation expression="&quot;Need Attention&quot;" stage="successMessage" />
+  </stage>
+  <stage stageid="acd93c06-68dd-4112-b277-b5d0f73bf773" name="Success" type="Calculation">
+    <subsheetid>18766abf-1222-42ad-abf9-6821b471c479</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>c194fd9f-8adb-417d-87d5-861925a62c70</onsuccess>
+    <calculation expression="&quot;Success&quot;" stage="successMessage" />
+  </stage>
+</process>

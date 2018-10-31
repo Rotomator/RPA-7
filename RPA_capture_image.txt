@@ -1,0 +1,7 @@
+
+Input to add - imagePath ([screenDir]&"/"&[Invoice-no]&"-"&[imageNum]&".jpeg")
+
+
+ScreenCapture sc = new ScreenCapture(); 
+
+sc.CaptureWindowToFile(imagePath, ImageFormat.Jpeg);

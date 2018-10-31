@@ -1,0 +1,2028 @@
+﻿<process name="Electrolux RA Processing v1.0" version="1.0" bpversion="6.2.1.4272" narrative="" byrefcollection="true" preferredid="a00b4738-881f-4b11-82de-dc10066c720e">
+  <view>
+    <camerax>-204</camerax>
+    <cameray>-418</cameray>
+    <zoom version="2">0.9375</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="5a45669f-a5e0-4051-a737-ce1bd30a84ba" type="Normal" published="False">
+    <name>Globals</name>
+    <view>
+      <camerax>-162</camerax>
+      <cameray>-1</cameray>
+      <zoom version="2">0.9375</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="0df71c5b-a9f6-45fc-aeee-a306d9b2fefe" type="Normal" published="False">
+    <name>Initialise BOT</name>
+    <view>
+      <camerax>303</camerax>
+      <cameray>225</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="9c2ee6e2-9ae8-4cd2-b6fc-92566f6d7792" type="Normal" published="False">
+    <name>Load OCR Data</name>
+    <view>
+      <camerax>22</camerax>
+      <cameray>-98</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="5ea44001-a792-4ea2-ac54-9e032c42b264" type="Normal" published="False">
+    <name>Launch JDE</name>
+    <view>
+      <camerax>48</camerax>
+      <cameray>-41</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="7f7b1d30-807a-43d7-a41f-c94bee1c08dc" type="Normal" published="False">
+    <name>Load Remittance Rules</name>
+    <view>
+      <camerax>-70</camerax>
+      <cameray>-24</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153" type="Normal" published="False">
+    <name>Process Invoices</name>
+    <view>
+      <camerax>-315</camerax>
+      <cameray>-109</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="4362d3d8-5e33-498c-a08d-10a5c1e3a6b3" type="Normal" published="False">
+    <name>Send  Processing Report</name>
+    <view>
+      <camerax>-15</camerax>
+      <cameray>-30</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="f05374b7-f09a-4c20-91e1-cfa9576408b1" type="Normal" published="False">
+    <name>Generate Report</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>45</cameray>
+      <zoom version="2">0.9375</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="9ea1d130-ab5c-4e04-9c1a-a27e8387f099" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>-510</displayx>
+    <displayy>-585</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>4da31700-17b1-4ccc-9ad4-4c7469dda5eb</onsuccess>
+  </stage>
+  <stage stageid="17316a14-26f0-4214-bfa9-12c4e720c299" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>-270</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="0a7c0c0e-cd84-43b0-90c2-e0b69f9ae16a" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-630</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="0e5b87da-e9a0-47df-b3c2-a7a4a849e112" name="Resume1" type="Resume">
+    <narrative>
+    </narrative>
+    <displayx>-345</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>cce75414-b87e-4a5a-addb-f3b54b23892c</onsuccess>
+  </stage>
+  <stage stageid="71c4a24a-18e8-4f1b-983d-f3ace0a6eb30" name="Capture Exception" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>-165</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>9b813747-095b-4c0c-a369-2ce6c33d21e5</onsuccess>
+    <calculation expression="ExceptionDetail()" stage="Exception" />
+  </stage>
+  <stage stageid="402f1156-566f-4fac-ac09-96ce703292c3" name="Exception" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-645</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9b813747-095b-4c0c-a369-2ce6c33d21e5" name="Write Exception" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>-255</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[logFilePath]" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="Now() &amp; &quot; Error:&quot; &amp; &quot; &quot; &amp; [Exception]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="" />
+    </outputs>
+    <onsuccess>0e5b87da-e9a0-47df-b3c2-a7a4a849e112</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="d61c208d-a402-49cc-bec8-1c3e5d1ac71c" name="Recover1" type="Recover">
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>b1ca70ce-c276-4bec-9c6f-1da3ab495477</onsuccess>
+  </stage>
+  <stage stageid="9a387a97-3536-4589-9e3c-da15b0f7397f" name="Process Invoices" type="SubSheetInfo">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-675</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="673e6c4e-99a5-41b5-b5ac-d052d4bff2bd" name="Start" type="Start">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-330</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>8101c11e-d2b8-40e8-a2a2-d7af80525fb2</onsuccess>
+  </stage>
+  <stage stageid="7ef832c8-0557-4e39-927f-d1ecdba1be1a" name="End" type="End">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-330</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="d5c22d86-697f-4b73-b054-34cf7ac9ca64" name="Load Remittance Rules" type="SubSheetInfo">
+    <subsheetid>7f7b1d30-807a-43d7-a41f-c94bee1c08dc</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="d5e53e81-a4e2-472d-b273-e6804862ed58" name="Start" type="Start">
+    <subsheetid>7f7b1d30-807a-43d7-a41f-c94bee1c08dc</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>3d1748c1-5530-42d9-8698-3823ea4c7eb1</onsuccess>
+  </stage>
+  <stage stageid="2091102b-a83d-4543-a572-fef6ffb21ed5" name="End" type="End">
+    <subsheetid>7f7b1d30-807a-43d7-a41f-c94bee1c08dc</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="c3d4b5a8-2e3f-4518-9ff0-4dd5a7109d94" name="Launch JDE" type="SubSheetInfo">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-270</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="03f6b948-d0fc-42bf-bc70-42ac0b81862e" name="Start" type="Start">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>5499af0f-275a-4df7-adba-f1ce218a7f7b</onsuccess>
+  </stage>
+  <stage stageid="bc15c307-993b-471c-b191-dc5aa7704dd1" name="End" type="End">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>165</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="7bf4c878-4a2f-4e10-8924-b797005bb95f" name="Attach Windows" type="Action">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>cc93280a-a1d1-4cd7-a583-81211a1abd3d</onsuccess>
+    <resource object="jde-windows" action="Attach JDE" />
+  </stage>
+  <stage stageid="5499af0f-275a-4df7-adba-f1ce218a7f7b" name="Launch JDE" type="Action">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-90</displayx>
+    <displayy>-90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>7bf4c878-4a2f-4e10-8924-b797005bb95f</onsuccess>
+    <resource object="jde-mainframe" action="Launch JDE" />
+  </stage>
+  <stage stageid="de0ea4bf-b12c-49c5-ad68-fde5bfaf4901" name="Process Invoices" type="SubSheet">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>c229cf10-c3d9-40d4-a77d-411dcf08a194</onsuccess>
+    <processid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</processid>
+  </stage>
+  <stage stageid="891a06e5-2956-49e3-8079-4a324013bed4" name="Local Variable" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>30</displayx>
+    <displayy>-705</displayy>
+    <displaywidth>225</displaywidth>
+    <displayheight>150</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="e91fc7ee-1354-4f9f-a7e2-25ff591c7b3d" name="Note1" type="Note">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>This process starts processing of invoice numbers sequentially.
+ </narrative>
+    <displayx>-510</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>210</displaywidth>
+    <displayheight>120</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="4d0c3198-6fb1-4a03-9b1d-ffa734e96d64" name="Load Config" type="Note">
+    <subsheetid>7f7b1d30-807a-43d7-a41f-c94bee1c08dc</subsheetid>
+    <loginhibit />
+    <narrative>This process finds the country and loads the predifined variance amount.</narrative>
+    <displayx>-180</displayx>
+    <displayy>-255</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="09d3ffe9-3d2b-4eb1-9cb1-19d6bb0e64a5" name="Note4" type="Note">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <loginhibit />
+    <narrative>This process launches the JDE and Navigates to Manual invoice entry processing screen. 
+
+Dependencies:
+1. Path of the JDE emulator to be provided in Application modeller of object jde-mainframe</narrative>
+    <displayx>-255</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>210</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="3d1748c1-5530-42d9-8698-3823ea4c7eb1" name="Load Variance" type="Action">
+    <subsheetid>7f7b1d30-807a-43d7-a41f-c94bee1c08dc</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="varianceFilePath" expr="[varianceFilepath]" />
+    </inputs>
+    <onsuccess>2091102b-a83d-4543-a572-fef6ffb21ed5</onsuccess>
+    <resource object="jde-mainframe" action="Get Variance" />
+  </stage>
+  <stage stageid="8101c11e-d2b8-40e8-a2a2-d7af80525fb2" name="Process Invoices" type="Action">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-330</displayx>
+    <displayy>-90</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="collection" name="Report" stage="Report" />
+    </outputs>
+    <onsuccess>44c6136f-0ff5-400d-a5b4-bc6326a64d4d</onsuccess>
+    <resource object="jde-mainframe" action="Process Invoices" />
+  </stage>
+  <stage stageid="051dfc89-8086-4343-909e-12733259c369" name="Close JDE" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>41788206-8dc3-4775-8189-15460f247f1e</onsuccess>
+    <resource object="jde-mainframe" action="Terminate JDE" />
+  </stage>
+  <stage stageid="f4c845f2-f56b-4ba4-8af8-873702c11f1f" name="Load Remittance Rules" type="SubSheet">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-390</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>de0ea4bf-b12c-49c5-ad68-fde5bfaf4901</onsuccess>
+    <processid>7f7b1d30-807a-43d7-a41f-c94bee1c08dc</processid>
+  </stage>
+  <stage stageid="c229cf10-c3d9-40d4-a77d-411dcf08a194" name="Generate Report" type="SubSheet">
+    <narrative>
+    </narrative>
+    <displayx>-105</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="number" name="totalInvoiceCount" stage="" />
+      <output type="number" name="procesdedCount" stage="" />
+      <output type="number" name="unProcessedCount" stage="" />
+    </outputs>
+    <onsuccess>051dfc89-8086-4343-909e-12733259c369</onsuccess>
+    <processid>f05374b7-f09a-4c20-91e1-cfa9576408b1</processid>
+  </stage>
+  <stage stageid="cc93280a-a1d1-4cd7-a583-81211a1abd3d" name="Login to JDE" type="Action">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>67928b71-5567-47b5-877b-579a7022e6aa</onsuccess>
+    <resource object="jde-windows" action="Login to JDE" />
+  </stage>
+  <stage stageid="67928b71-5567-47b5-877b-579a7022e6aa" name="Enter Choices" type="Action">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="text" name="outClientName" stage="outClientName" />
+    </outputs>
+    <onsuccess>bc15c307-993b-471c-b191-dc5aa7704dd1</onsuccess>
+    <resource object="jde-mainframe" action="Enter Choices" />
+  </stage>
+  <stage stageid="f7360958-68a3-4bad-87f3-4b03537c1854" name="Launch JDE" type="SubSheet">
+    <narrative>
+    </narrative>
+    <displayx>-105</displayx>
+    <displayy>-390</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f4c845f2-f56b-4ba4-8af8-873702c11f1f</onsuccess>
+    <processid>5ea44001-a792-4ea2-ac54-9e032c42b264</processid>
+  </stage>
+  <stage stageid="9d54c282-6e39-4b4c-8d9d-dd167ebc929d" name="Load OCR Data" type="SubSheetInfo">
+    <subsheetid>9c2ee6e2-9ae8-4cd2-b6fc-92566f6d7792</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="9cb9126b-9af4-4b63-a433-7eb955b23c1d" name="Load OCR Data" type="SubSheet">
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-390</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f7360958-68a3-4bad-87f3-4b03537c1854</onsuccess>
+    <processid>9c2ee6e2-9ae8-4cd2-b6fc-92566f6d7792</processid>
+  </stage>
+  <stage stageid="7b749cd9-499c-46a3-bd62-f7a7ed06e6e9" name="Initialise BOT" type="SubSheetInfo">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-180</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="39ef5da1-8e3b-4a90-834e-5d22ffd41bd7" name="Start" type="Start">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>5a517144-0226-48ce-97da-eea6587f722c</onsuccess>
+  </stage>
+  <stage stageid="9cbb40e4-f945-4b7e-ad34-22b8cb1f1b17" name="End1" type="End">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>225</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="4da31700-17b1-4ccc-9ad4-4c7469dda5eb" name="Initialise BOT" type="SubSheet">
+    <narrative>This Process loads global variable and folder paths</narrative>
+    <displayx>-510</displayx>
+    <displayy>-525</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>729eecb4-f9c4-4acd-9483-7bbe2c5df74b</onsuccess>
+    <processid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</processid>
+  </stage>
+  <stage stageid="5a517144-0226-48ce-97da-eea6587f722c" name="Get Folder Paths" type="MultipleCalculation">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>105</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f33ffb54-a6fb-4655-93f1-6ebd2aef464f</onsuccess>
+    <steps>
+      <calculation expression="[folderPath]&amp;&quot;\Data&quot;" stage="dataDirectory" />
+      <calculation expression="[dataDirectory]&amp;&quot;\InBound&quot;" stage="inBoundDir" />
+      <calculation expression="[dataDirectory]&amp;&quot;\Processed&quot;" stage="processedDirectory" />
+      <calculation expression="[dataDirectory]&amp;&quot;\InProcess&quot;" stage="inProcessDirectory" />
+      <calculation expression="[dataDirectory]&amp;&quot;\Error&quot;" stage="errorDirectory" />
+      <calculation expression="[folderPath]&amp;&quot;\Logs&quot;" stage="logsDirectory" />
+      <calculation expression="[logsDirectory]&amp;&quot;\&quot;&amp;FormatDateTime(Now(), &quot;yyyyMMddhhmmss&quot;)" stage="logDateDirectory" />
+      <calculation expression="[logDateDirectory]&amp;&quot;\logs.txt&quot;" stage="logFilePath" />
+      <calculation expression="[logDateDirectory]&amp;&quot;\Screenshots&quot;" stage="screenshotDirectory" />
+      <calculation expression="[configFolderPath]&amp;&quot;\Client-Config.xlsx&quot;" stage="clientConfigFile " />
+      <calculation expression="[configFolderPath]&amp;&quot;\Variance.xlsx&quot;" stage="varianceFilepath" />
+      <calculation expression="LocalTime()" stage="startTime" />
+    </steps>
+  </stage>
+  <stage stageid="b1ca70ce-c276-4bec-9c6f-1da3ab495477" name="Capture Screenshot" type="Action">
+    <narrative>Capture Screenshot</narrative>
+    <displayx>-90</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>71c4a24a-18e8-4f1b-983d-f3ace0a6eb30</onsuccess>
+    <resource object="jde-mainframe" action="Capture Exception" />
+  </stage>
+  <stage stageid="fbadaa7f-228e-496b-bf93-50c283713ee1" name="Anchor1" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>-225</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>17316a14-26f0-4214-bfa9-12c4e720c299</onsuccess>
+  </stage>
+  <stage stageid="cce75414-b87e-4a5a-addb-f3b54b23892c" name="Anchor2" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>-345</displayx>
+    <displayy>-225</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>fbadaa7f-228e-496b-bf93-50c283713ee1</onsuccess>
+  </stage>
+  <stage stageid="4e8c7665-3f4f-453e-b2f8-54fe5ac12afb" name="Note1" type="Note">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>This will initialise the BOT and sets up folder paths, required configuration and credentials.
+
+Dependencies:
+1. Set the root folder path in "Folder Path" in environment variables.
+3. Bot reads email properties from environment variables
+4. Bot reads the OCR file from "OCR File Path" set in environment variables.
+
+</narrative>
+    <displayx>-150</displayx>
+    <displayy>0</displayy>
+    <displaywidth>210</displaywidth>
+    <displayheight>150</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="674f56d7-fa5d-453d-8a9d-ccb564de9234" name="Note1" type="Note">
+    <subsheetid>9c2ee6e2-9ae8-4cd2-b6fc-92566f6d7792</subsheetid>
+    <narrative>This process loads the extracted OCR data from remittance advice.</narrative>
+    <displayx>-240</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="0a33a883-3c31-4351-91af-1ff8578346af" name="Note1" type="Note">
+    <subsheetid>7f7b1d30-807a-43d7-a41f-c94bee1c08dc</subsheetid>
+    <narrative>This process gets the variance allowed for a country.
+
+Dependencies:
+1. Variance.xlsx file should be present in Config Files folder with the required details.</narrative>
+    <displayx>-225</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="0f2a0d40-6c95-4458-a607-bb58d54067cd" name="Globals" type="SubSheetInfo">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-495</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="d4a31da0-f376-4445-99c2-e1816c8a4db5" name="Start" type="Start">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-285</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>11e3e453-cbb0-4f3f-9c69-c60f9fbce349</onsuccess>
+  </stage>
+  <stage stageid="11e3e453-cbb0-4f3f-9c69-c60f9fbce349" name="End" type="End">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-210</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="3471310c-eab6-4d7e-bad7-8545eaca7c5b" name="Global Variables" type="Block">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-330</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>270</displaywidth>
+    <displayheight>315</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="380b3529-9363-40e9-9558-a2c5e609df00" name="ocrFilePath" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This folder path contains the OCR extracted file recieved from KTA</narrative>
+    <displayx>-270</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="4b19b720-e02a-4dec-884e-e61a08a1d92c" name="folderPath" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Reads the root folder path defined in environment variables</narrative>
+    <displayx>-270</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="55cab8c9-fb2d-46bf-b690-21ff634d0bfe" name="dataDirectory" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Created Data directory inside the root folder</narrative>
+    <displayx>-120</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fc363814-4057-4d4b-ae3d-4a19908848b3" name="inBoundDir" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the path for Inbound directory created under Data folder</narrative>
+    <displayx>-120</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="02d0f42a-7338-4430-98cf-c3901d8716fd" name="processedDirectory" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the path for processed directory created under Data folder</narrative>
+    <displayx>-120</displayx>
+    <displayy>30</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="815eb040-192e-45cc-8d87-ae8b22874d67" name="inProcessDirectory" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the path for InProcess directory created under Data folder</narrative>
+    <displayx>-270</displayx>
+    <displayy>30</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2fd3579e-bd5a-4f26-ba83-b4ee7971a203" name="errorDirectory" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the path for Error directory created under Data folder</narrative>
+    <displayx>-120</displayx>
+    <displayy>120</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ccf106b3-21bd-43ec-9619-c67baa169675" name="logsDirectory" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the path Log directory created under Root folder</narrative>
+    <displayx>-270</displayx>
+    <displayy>75</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f1cf7c1f-02d8-47dc-a697-b4ea3aa8b9cf" name="configFolderPath" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the path Config File directory which is picked up from environment variables</narrative>
+    <displayx>-120</displayx>
+    <displayy>75</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="78bf2ab9-01f3-474f-808f-865eed820060" name="logDateDirectory" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the path Log directory created for each run under Log folder</narrative>
+    <displayx>-120</displayx>
+    <displayy>165</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a5b4fb96-aa8e-447e-829b-0fad41728b30" name="logFilePath" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the log file path created under Logs folder</narrative>
+    <displayx>-270</displayx>
+    <displayy>120</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="65896197-1a90-4898-9c8e-3bc074e20cf6" name="screenshotDirectory" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This variable holds the screenshot directory path created under Logs folder</narrative>
+    <displayx>-270</displayx>
+    <displayy>165</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3b8827a7-4c89-4661-9be8-9f31e3be9f68" name="clientConfigFile " type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-270</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c3282109-4c3e-449a-88ff-acc8708edcb2" name="varianceFilepath" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This is path of variance file placed under Config Files folder</narrative>
+    <displayx>-120</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="79b4ef34-dfd4-4a06-88f0-bda31e41fad2" name="email username" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Reads the email user name defined in environment variables</narrative>
+    <displayx>30</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="a20a1f7b-c23a-4a85-881f-55af573af19c" name="email password" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Reads the email password defined in environment variables</narrative>
+    <displayx>105</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>password</datatype>
+    <initialvalueenc>
+    </initialvalueenc>
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="da51d1cd-353c-4a55-ac47-dc8a4ca6e2ed" name="Email  Variables" type="Block">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>210</displaywidth>
+    <displayheight>315</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="f288ad9b-9aa6-4df7-bf9c-d456d4b329d2" name="POP3 Port" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Reads the email POP3 port defined in environment variables</narrative>
+    <displayx>105</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="edea173b-e272-4bc9-b679-2a4e493b6b80" name="POP3 Server" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Reads the email POP3 server name defined in environment variables</narrative>
+    <displayx>30</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="a634c13c-a53b-4d7f-a21f-4335a5f7445f" name="SMTP Port" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Reads the email SMTP port defined in environment variables</narrative>
+    <displayx>105</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="a9140afd-c1a4-448a-b46a-cf7e6cad9771" name="SMTP Server" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>Reads the email SMTP server name defined in environment variables</narrative>
+    <displayx>30</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="9742854a-49eb-4b5d-994d-565de7b64aef" name="Note1" type="Note">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>This page contains the global variables which will be consumed by other processes/objects. 
+
+Dependencies: None
+
+</narrative>
+    <displayx>-480</displayx>
+    <displayy>30</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>120</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="f33ffb54-a6fb-4655-93f1-6ebd2aef464f" name="Create Folder Structure" type="Action">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="dataDirPath" expr="[dataDirectory]" />
+      <input type="text" name="inBoundDirPath" expr="[inBoundDir]" />
+      <input type="text" name="processedDirPath" expr="[processedDirectory]" />
+      <input type="text" name="inProcessDirPath" expr="[inProcessDirectory]" />
+      <input type="text" name="errorDirPath" expr="[errorDirectory]" />
+      <input type="text" name="logFilePath" expr="[logFilePath]" />
+      <input type="text" name="logDirPath" expr="[logsDirectory]" />
+      <input type="text" name="logDateDirPath" expr="[logDateDirectory]" />
+      <input type="text" name="screenDirPath" expr="[screenshotDirectory]" />
+      <input type="text" name="configDirPath" expr="[configFolderPath]" />
+      <input type="text" name="clientConfigPath" expr="[clientConfigFile ]" />
+      <input type="text" name="folderPath" expr="[folderPath]" />
+    </inputs>
+    <onsuccess>88f7495f-215c-44ef-af6a-b9659dbe2a83</onsuccess>
+    <resource object="jde-mainframe" action="Create Folder Structure" />
+  </stage>
+  <stage stageid="cb45a368-fb0b-439b-97db-5746d16ebb5e" name="Note1" type="Note">
+    <narrative>This is the main page for RA processing.
+
+Dependencies: None
+
+</narrative>
+    <displayx>-600</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FF0000" />
+  </stage>
+  <stage stageid="88f7495f-215c-44ef-af6a-b9659dbe2a83" name="Config File Directory " type="Action">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Directory Name" narrative="The directory to check exists" expr="&quot;C:\Users\kulkacha\Desktop\Config Files&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" narrative="True if the directory exists" stage="configDirExists" />
+    </outputs>
+    <onsuccess>20400fb3-84ff-4ddc-a4c5-b6dc520702f2</onsuccess>
+    <resource object="Utility - File Management" action="Directory Exists" />
+  </stage>
+  <stage stageid="64f443d8-85df-426c-8341-d18f7586ec0a" name="configDirExists" type="Data">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="20400fb3-84ff-4ddc-a4c5-b6dc520702f2" name="Config directory exists?" type="Decision">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>45</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[configDirExists] = True" />
+    <ontrue>7ab6361b-7205-46ab-9f43-986105ecc2ba</ontrue>
+    <onfalse>dbea44b4-0017-4620-8e33-893ad48f1b80</onfalse>
+  </stage>
+  <stage stageid="dbea44b4-0017-4620-8e33-893ad48f1b80" name="Log Error Message" type="Action">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>420</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[logFilePath]" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="Now() &amp; &quot; Error:&quot; &amp; &quot; &quot; &amp; &quot; Configuration file folder does not exists at  &quot; &amp;[configFolderPath]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="" />
+    </outputs>
+    <onsuccess>d251487a-73a6-4f22-bef7-2bbac59090a0</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="7ab6361b-7205-46ab-9f43-986105ecc2ba" name="Config File" type="Action">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The name of the file to check" expr="[clientConfigFile ]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" narrative="True if the file exists" stage="configFileExists" />
+    </outputs>
+    <onsuccess>5e6ee792-40be-416b-9996-595aa5d940a8</onsuccess>
+    <resource object="Utility - File Management" action="File Exists" />
+  </stage>
+  <stage stageid="9dd61b82-fa9d-4e0a-b17a-4021c9e93af1" name="configFileExists" type="Data">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>405</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b0a54a52-6141-46ee-acca-0147fabfc5d6" name="Variance File" type="Action">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The name of the file to check" expr="[varianceFilepath]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" narrative="True if the file exists" stage="varianceFileExists" />
+    </outputs>
+    <onsuccess>8cdc63d1-eb33-4f40-8fd5-0fa7fcead8c8</onsuccess>
+    <resource object="Utility - File Management" action="File Exists" />
+  </stage>
+  <stage stageid="5e6ee792-40be-416b-9996-595aa5d940a8" name="Config file exists?" type="Decision">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>105</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[configFileExists]= True" />
+    <ontrue>b0a54a52-6141-46ee-acca-0147fabfc5d6</ontrue>
+    <onfalse>4860fe90-8262-428d-8fd5-5631e746285c</onfalse>
+  </stage>
+  <stage stageid="4860fe90-8262-428d-8fd5-5631e746285c" name="Log Error Message" type="Action">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>420</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[logFilePath]" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="Now() &amp; &quot; Error:&quot; &amp; &quot; &quot; &amp; &quot; Configuration file does not exists at  &quot; &amp;[configFolderPath]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="" />
+    </outputs>
+    <onsuccess>d251487a-73a6-4f22-bef7-2bbac59090a0</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="8cdc63d1-eb33-4f40-8fd5-0fa7fcead8c8" name="Variance file exists?" type="Decision">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>165</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[varianceFileExists]= True" />
+    <ontrue>9cbb40e4-f945-4b7e-ad34-22b8cb1f1b17</ontrue>
+    <onfalse>dc3b4fc9-2572-47bb-9d6c-3145571909dc</onfalse>
+  </stage>
+  <stage stageid="dc3b4fc9-2572-47bb-9d6c-3145571909dc" name="Log Error Message" type="Action">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>420</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[logFilePath]" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="Now() &amp; &quot; Error:&quot; &amp; &quot; &quot; &amp; &quot; Variance file does not exists at  &quot; &amp;[varianceFilepath]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="" />
+    </outputs>
+    <onsuccess>d251487a-73a6-4f22-bef7-2bbac59090a0</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="d72915cc-b5bc-4bd3-89d4-bdd1d8ffe0f9" name="varianceFileExists" type="Data">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>330</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0dcc9431-70cc-4f06-8f0d-422e3fd17beb" name="Local Variables" type="Block">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>255</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>195</displaywidth>
+    <displayheight>105</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="d251487a-73a6-4f22-bef7-2bbac59090a0" name="Exception1" type="Exception">
+    <subsheetid>0df71c5b-a9f6-45fc-aeee-a306d9b2fefe</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>540</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="Business Exception" detail="&quot;Configuration folder or Config files are not exists&quot;" />
+  </stage>
+  <stage stageid="b04ebb57-434a-44d3-993b-c6d641cb8acc" name="Send  Processing Report" type="SubSheetInfo">
+    <subsheetid>4362d3d8-5e33-498c-a08d-10a5c1e3a6b3</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="a63bd29e-588b-4fa7-9349-fd8b7783b9f1" name="Start" type="Start">
+    <subsheetid>4362d3d8-5e33-498c-a08d-10a5c1e3a6b3</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>bc1bff5a-8d1e-43f2-99ac-96210142310f</onsuccess>
+  </stage>
+  <stage stageid="98778d48-61cd-4a09-ab77-a0d9f16ac0f9" name="End" type="End">
+    <subsheetid>4362d3d8-5e33-498c-a08d-10a5c1e3a6b3</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="bc1bff5a-8d1e-43f2-99ac-96210142310f" name="Send Detailed Report" type="Action">
+    <subsheetid>4362d3d8-5e33-498c-a08d-10a5c1e3a6b3</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="CC_MailID" expr="[CC EmailID]" />
+      <input type="text" name="TO_MailID" expr="[To EmailID]" />
+      <input type="text" name="inClientName" expr="[outClientName]" />
+      <input type="time" name="startTime" expr="[startTime]" />
+      <input type="time" name="endTime" expr="[endTime]" />
+      <input type="timespan" name="executionTime" expr="[executionTime]" />
+      <input type="number" name="totalCount" expr="[totalInvoiceNumbers]" />
+      <input type="number" name="processedCount" expr="[processedCount]" />
+      <input type="number" name="unProcessedCount" expr="[unprocessedCount]" />
+      <input type="text" name="logFilePath" expr="[logFilePath]" />
+      <input type="text" name="screenShotPath" expr="[screenshotDirectory]" />
+    </inputs>
+    <onsuccess>98778d48-61cd-4a09-ab77-a0d9f16ac0f9</onsuccess>
+    <resource object="Send Email" action="Send Report Email" />
+  </stage>
+  <stage stageid="7d14c7f5-9f0a-46bf-a5db-6d5474005c6b" name="To EmailID" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>30</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="1e70883c-70d9-49db-af64-d355dc5873fa" name="CC EmailID" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>105</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <exposure>Environment</exposure>
+    <alwaysinit />
+  </stage>
+  <stage stageid="41788206-8dc3-4775-8189-15460f247f1e" name="Send  Processing Report" type="SubSheet">
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-270</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>b2e32a53-12c6-44cd-9f7c-f64f53f5d318</onsuccess>
+    <processid>4362d3d8-5e33-498c-a08d-10a5c1e3a6b3</processid>
+  </stage>
+  <stage stageid="2aff9cd6-2263-486b-96a5-67b552a15f13" name="outClientName" type="Data">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>165</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="07a9abc1-9695-4a11-8a0c-bb6b6866f2ca" name="outVariables" type="Block">
+    <subsheetid>5ea44001-a792-4ea2-ac54-9e032c42b264</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>120</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>135</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="de1f4014-fe39-4c61-8797-d0c1ae24bfad" name="Start" type="Start">
+    <subsheetid>9c2ee6e2-9ae8-4cd2-b6fc-92566f6d7792</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-45</displayx>
+    <displayy>-255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>65e5cdd0-27d6-4867-9d54-b38aa370e762</onsuccess>
+  </stage>
+  <stage stageid="8736208e-7e87-4345-95c9-86ece9702dad" name="End2" type="End">
+    <subsheetid>9c2ee6e2-9ae8-4cd2-b6fc-92566f6d7792</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-45</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="65e5cdd0-27d6-4867-9d54-b38aa370e762" name="Load OCR Data" type="Action">
+    <subsheetid>9c2ee6e2-9ae8-4cd2-b6fc-92566f6d7792</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-45</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="inOcrCurrerntPath" expr="[readFirstPath]" />
+    </inputs>
+    <onsuccess>8736208e-7e87-4345-95c9-86ece9702dad</onsuccess>
+    <resource object="jde-mainframe" action="Load OCR data" />
+  </stage>
+  <stage stageid="0af809c5-ed86-4fde-ba58-c0a13584f393" name="ocrFileName" type="Collection">
+    <narrative>This collections store the filepaths</narrative>
+    <displayx>180</displayx>
+    <displayy>-645</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+  </stage>
+  <stage stageid="729eecb4-f9c4-4acd-9483-7bbe2c5df74b" name="Get OCR Files" type="Action">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-360</displayx>
+    <displayy>-525</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Folder" narrative="The folder in which to look for files" expr="[ocrFilePath]" />
+      <input type="text" name="Patterns CSV" narrative="The comma seperated list of wildcard patterns" expr="&quot;*.txt&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="A message if unsuccessful" stage="" />
+      <output type="collection" name="Files" narrative="The collection of files found" stage="ocrFileName" />
+    </outputs>
+    <onsuccess>866dbd3a-0289-40c9-99a3-711583dc1643</onsuccess>
+    <resource object="Utility - File Management" action="Get Files" />
+  </stage>
+  <stage stageid="39e33fb5-2c71-4166-a6e9-242feaec14c2" name="Read coll field" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-450</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[ocrFileName]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;Path&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="readFirstPath" />
+    </outputs>
+    <onsuccess>9cb9126b-9af4-4b63-a433-7eb955b23c1d</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="21014303-bd5a-433a-b974-50b721da18b9" name="readFirstPath" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-600</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3c0f8657-f851-4855-bafb-6f3c4617fac6" name="OCR files exists?" type="Decision">
+    <narrative>
+    </narrative>
+    <displayx>-60</displayx>
+    <displayy>-525</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Bold" color="FF0000" />
+    <decision expression="[fileCount] &gt; 0" />
+    <ontrue>3ad7f883-f44d-4327-8545-90316e64c9ea</ontrue>
+    <onfalse>9656a252-5918-4ddf-b0a9-b0495fe51cc8</onfalse>
+  </stage>
+  <stage stageid="866dbd3a-0289-40c9-99a3-711583dc1643" name="Get File Count" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>-210</displayx>
+    <displayy>-525</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;ocrFileName&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="fileCount" />
+    </outputs>
+    <onsuccess>3c0f8657-f851-4855-bafb-6f3c4617fac6</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="cc1f7d24-d0fa-4702-87dc-e6d151000c9d" name="fileCount" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>195</displayx>
+    <displayy>-600</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3ad7f883-f44d-4327-8545-90316e64c9ea" name="Anchor4" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>-60</displayx>
+    <displayy>-450</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>39e33fb5-2c71-4166-a6e9-242feaec14c2</onsuccess>
+  </stage>
+  <stage stageid="b2e32a53-12c6-44cd-9f7c-f64f53f5d318" name="Anchor3" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>-360</displayx>
+    <displayy>-270</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>729eecb4-f9c4-4acd-9483-7bbe2c5df74b</onsuccess>
+  </stage>
+  <stage stageid="9656a252-5918-4ddf-b0a9-b0495fe51cc8" name="Anchor5" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>120</displayx>
+    <displayy>-525</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>196354be-b414-484c-a503-a41e865ac4bd</onsuccess>
+  </stage>
+  <stage stageid="196354be-b414-484c-a503-a41e865ac4bd" name="Anchor6" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>120</displayx>
+    <displayy>-270</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>17316a14-26f0-4214-bfa9-12c4e720c299</onsuccess>
+  </stage>
+  <stage stageid="f16fc0e2-de65-4a8b-b61d-63a0d9076a31" name="startTime" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>30</displayx>
+    <displayy>75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>time</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="44c6136f-0ff5-400d-a5b4-bc6326a64d4d" name="calculateProcessingTime" type="MultipleCalculation">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-330</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>7ef832c8-0557-4e39-927f-d1ecdba1be1a</onsuccess>
+    <steps>
+      <calculation expression="LocalTime()" stage="endTime" />
+      <calculation expression="[endTime] - [startTime]" stage="executionTime" />
+    </steps>
+  </stage>
+  <stage stageid="2abae3e9-ec49-4891-8614-b1a2d0e450b7" name="endTime" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>105</displayx>
+    <displayy>75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>time</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cc129579-b69c-4b5d-8481-489634cf1aca" name="executionTime" type="Data">
+    <subsheetid>5a45669f-a5e0-4051-a737-ce1bd30a84ba</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>30</displayx>
+    <displayy>135</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>timespan</datatype>
+    <initialvalue>0.00:00:00</initialvalue>
+    <alwaysinit />
+  </stage>
+  <stage stageid="20fd2832-2957-47f8-97b9-61d64faadb24" name="Generate Report" type="SubSheetInfo">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-360</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="5daaa28f-f95a-43c5-976b-ad361936f64f" name="End" type="End">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="number" name="totalInvoiceCount" stage="totalInvoiceNumbers" />
+      <output type="number" name="procesdedCount" stage="processedCount" />
+      <output type="number" name="unProcessedCount" stage="unprocessedCount" />
+    </outputs>
+  </stage>
+  <stage stageid="9f946787-48f2-4716-a6c1-757f87a1493e" name="Start" type="Start">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-180</displayx>
+    <displayy>-255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>ecd3715e-08bd-4901-b0ee-228c6b7b442c</onsuccess>
+  </stage>
+  <stage stageid="ecd3715e-08bd-4901-b0ee-228c6b7b442c" name="Create Excel Instance " type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>-255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="flag" name="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="instance" />
+    </outputs>
+    <onsuccess>376ae7f9-b89f-4319-bb40-a48fc45ff069</onsuccess>
+    <resource object="MS Excel VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="4196354e-6476-427a-922b-a32c432ce9fe" name="Open Workbook" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>-90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[instance]" />
+      <input type="text" name="File name" narrative="The path and name of the file which should be opened." expr="[folderPath]&amp;&quot;\&quot;&amp;[outClientName]&amp;&quot;.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="report-data" />
+    </outputs>
+    <onsuccess>d11d05c5-882e-4a37-9d16-c39259e87b10</onsuccess>
+    <resource object="MS Excel VBO" action="Open Workbook" />
+  </stage>
+  <stage stageid="d11d05c5-882e-4a37-9d16-c39259e87b10" name="Generate Report" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the specified collection should be written. The default of zero indicates the currently active instance." expr="[instance]" />
+      <input type="collection" name="Collection" narrative="The collection containing the data which should be written to the worksheet." expr="[Report]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook within which the data should be written. The default empty value indicates the current workbook within the specified instance." expr="[report-data]" />
+      <input type="text" name="Worksheet Name" narrative="The name of the worksheet on which the given data should be written. The default empty value indicates the current sheet within the specified workbook." expr="&quot;Sheet1&quot;" />
+      <input type="text" name="Cell Reference" narrative="The reference at which the collection should be written." expr="&quot;A1&quot;" />
+      <input type="flag" name="Include Column Names" narrative="True to indicate that the column names from the collection should be written out as the first row; False to ignore the column names and just write out the data." expr="True" />
+    </inputs>
+    <onsuccess>537a4210-dbe1-438f-8468-4acc974ee72f</onsuccess>
+    <resource object="MS Excel VBO" action="Write Collection" />
+  </stage>
+  <stage stageid="537a4210-dbe1-438f-8468-4acc974ee72f" name="Close Report" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the workbook which should be closed resides. The default of zero indicates the currently active instance." expr="[instance]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook which should be closed." expr="[report-data]" />
+      <input type="flag" name="Save Data" narrative="True to save the data before closing the workbook; The default of False will discard any changes before closing the workbook." expr="True" />
+    </inputs>
+    <onsuccess>11a32c41-9271-4180-87dc-8b5d95317e57</onsuccess>
+    <resource object="MS Excel VBO" action="Close Workbook" />
+  </stage>
+  <stage stageid="11a32c41-9271-4180-87dc-8b5d95317e57" name="Log report" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[logFilePath]" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="Now() &amp; &quot;:&quot; &amp; &quot; Report generated successfully&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="" />
+    </outputs>
+    <onsuccess>2db8c00e-61ae-4eab-9f57-7cae1be08841</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="376ae7f9-b89f-4319-bb40-a48fc45ff069" name="Create Workbook" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>-210</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the workbook should be created. The default of zero indicates the currently active instance." expr="[instance]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" narrative="The name of the workbook that Excel has created - this can be changed using the &quot;Save Workbook As&quot; action" stage="RAprocessingReport" />
+    </outputs>
+    <onsuccess>59a58161-9e19-43da-a7ef-66c1db6eb859</onsuccess>
+    <resource object="MS Excel VBO" action="Create Workbook" />
+  </stage>
+  <stage stageid="59a58161-9e19-43da-a7ef-66c1db6eb859" name="Save Workbook" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="handle" narrative="The integer handle identifying the instance on which the workbook which should be saved resides. The default of zero indicates the currently active instance." expr="[instance]" />
+      <input type="text" name="Workbook Name" narrative="The name of the workbook which should be saved" expr="[RAprocessingReport]" />
+      <input type="text" name="Filename" narrative="The full path and filename to which the workbook should be saved." expr="[folderPath]&amp;&quot;\&quot;&amp;[outClientName]&amp;&quot;.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="New Workbook Name" narrative="The new workbook name which Excel will use to identify the workbook within the instance." stage="" />
+    </outputs>
+    <onsuccess>4196354e-6476-427a-922b-a32c432ce9fe</onsuccess>
+    <resource object="MS Excel VBO" action="Save Workbook As" />
+  </stage>
+  <stage stageid="6542ae70-4a58-4ee9-b50f-554c995d00a9" name="Recover8" type="Recover">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>dbe7097c-e9f6-4547-bbd5-00f5a87a3c66</onsuccess>
+  </stage>
+  <stage stageid="dbe7097c-e9f6-4547-bbd5-00f5a87a3c66" name="Resume8" type="Resume">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>105</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>06df1130-faac-4ea9-960d-5fb6552e9e55</onsuccess>
+  </stage>
+  <stage stageid="b0a12558-cba7-4a9e-a9b1-fc0a60339fb8" name="End5" type="End">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>270</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="number" name="totalInvoiceCount" stage="totalInvoiceNumbers" />
+      <output type="number" name="procesdedCount" stage="processedCount" />
+      <output type="number" name="unProcessedCount" stage="unprocessedCount" />
+    </outputs>
+  </stage>
+  <stage stageid="06df1130-faac-4ea9-960d-5fb6552e9e55" name="Log Error Message" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[logFilePath]" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="Now() &amp; &quot;:&quot; &amp; &quot; Unable to generate the summary report&quot; &amp; &quot;The file name or path does not exist OR The file is being used by another program OR The workbook you are trying to save has the same name as a currently open workbook&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="" />
+    </outputs>
+    <onsuccess>b0a12558-cba7-4a9e-a9b1-fc0a60339fb8</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="fb1047b5-2edc-4745-b8e6-6914ff3bbece" name="Block11" type="Block">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-120</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>45</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c52e0331-f7ca-4f5d-b71b-10530a71f49a" name="Remove Existing data" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>165</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Report&quot;" />
+    </inputs>
+    <onsuccess>5daaa28f-f95a-43c5-976b-ad361936f64f</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Remove All Rows" />
+  </stage>
+  <stage stageid="2db8c00e-61ae-4eab-9f57-7cae1be08841" name="Get Total Count of Invoices" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>60</displayx>
+    <displayy>45</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Report&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="totalInvoiceNumbers" />
+    </outputs>
+    <onsuccess>8f2126a4-592d-401b-bf8d-4d5e3236b907</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="8f2126a4-592d-401b-bf8d-4d5e3236b907" name="Filter Report" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Report]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;[Processing Status] = '&quot;&amp;&quot;UnProcessed&quot;&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="UnProcessedData" />
+    </outputs>
+    <onsuccess>7f2f67a6-df94-4e90-9086-18557af306cc</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Filter Collection" />
+  </stage>
+  <stage stageid="51e25311-b318-46b0-9696-da18fa656b8b" name="Get count of processed" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Report]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;[Processing Status] = '&quot;&amp;&quot;Processed&quot;&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="ProcessedData" />
+    </outputs>
+    <onsuccess>b0e16689-5519-4c2e-a428-3fc439b25627</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Filter Collection" />
+  </stage>
+  <stage stageid="7f2f67a6-df94-4e90-9086-18557af306cc" name="Get Count" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;UnProcessedData&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="unprocessedCount" />
+    </outputs>
+    <onsuccess>51e25311-b318-46b0-9696-da18fa656b8b</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="b0e16689-5519-4c2e-a428-3fc439b25627" name="Get Count" type="Action">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;ProcessedData&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="processedCount" />
+    </outputs>
+    <onsuccess>c52e0331-f7ca-4f5d-b71b-10530a71f49a</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="1094c385-f3a9-4f71-972e-bbe147320e2b" name="instance" type="Data">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-435</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5c5bad46-2eaf-4dd2-96d1-876b3d9e2fda" name="RAprocessingReport" type="Data">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>60</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="844a96ff-ccfc-4805-af18-a1675712633f" name="report-data" type="Data">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>180</displayx>
+    <displayy>-435</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="55f3696b-a7c5-4339-b4e7-7322199b95ea" name="totalInvoiceNumbers" type="Data">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>255</displayx>
+    <displayy>-375</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d878baaa-a263-41b2-959e-3ffe79e4b4c6" name="UnProcessedData" type="Collection">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>255</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1e51324c-4c74-438a-a02b-6ec46b2b2117" name="unprocessedCount" type="Data">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-375</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="67376410-de2d-44c6-a321-23087290ffd5" name="ProcessedData" type="Collection">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fa67fef3-9f6d-47df-9477-6d9ab61bc3a2" name="processedCount" type="Data">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>60</displayx>
+    <displayy>-375</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8f41e530-a178-4cb7-b1b8-bf89202708c7" name="Report" type="Collection">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Client Name" type="text" namespace="" />
+      <field name="Invoice Number" type="text" namespace="" />
+      <field name="Remittance Amount" type="number" namespace="" />
+      <field name="JDE Amount" type="number" namespace="" />
+      <field name="Variance Applied" type="number" namespace="" />
+      <field name="Processing Date" type="text" namespace="" />
+      <field name="Previous Receipt No" type="text" namespace="" />
+      <field name="Processing Status" type="text" namespace="" />
+      <field name="Remark" type="text" namespace="" />
+      <field name="Country" type="text" namespace="" />
+      <field name="Payment Mode" type="text" namespace="" />
+      <field name="Bank Account Number" type="text" namespace="" />
+      <field name="Currency" type="text" namespace="" />
+      <field name="ClientCode" type="text" namespace="" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="e89a7793-f95e-4220-86fd-391ef29f60a8" name="Block1" type="Block">
+    <subsheetid>f05374b7-f09a-4c20-91e1-cfa9576408b1</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-15</displayx>
+    <displayy>-495</displayy>
+    <displaywidth>345</displaywidth>
+    <displayheight>210</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="db3c15d8-517f-458c-813a-3cc86c50266b" name="Block2" type="Block">
+    <subsheetid>2f765f5b-247b-4fc6-a9fe-7fdf6d2ea153</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-255</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>75</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+</process>
